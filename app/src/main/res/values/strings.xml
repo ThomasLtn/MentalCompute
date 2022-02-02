@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name" translatable="false">MentalCompute</string>
+
+    <!-- Main Activity -->
+    <string name="play">Play</string>
+    <!-- <string name="score_view">View scores</string> -->
+
+    <!-- Mental Activity -->
+    <string name="correct">Correct</string>
+    <string name="incorrect">Incorrect</string>
+    <string name="answer">Answer</string>
+    <string name="validate">Validate</string>
+
+    <!-- Score Activity-->
+    <string name="operations_count_label">Operations count : XX</string>
+    <string name="accuracy_label">Accuracy : XX %</string>
+    <string name="last_operation_label">Last operation : XX</string>
+    <string name="retry">Retry</string>
+
+    <!-- Score view menu -->
+    <string name="score_view">View scores</string>
+    <string name="reset">Reset scores</string>
+</resources>
