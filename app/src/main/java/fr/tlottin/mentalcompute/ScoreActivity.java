@@ -12,8 +12,8 @@ public class ScoreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
 
-        Button score_view_menu_button = findViewById(R.id.score_view_menu_button);
-        score_view_menu_button.setOnClickListener(view -> goToPreviewActivity());
+        Button retry_button = findViewById(R.id.retry_button);
+        retry_button.setOnClickListener(view -> goToPreviewActivity());
     }
 
     private void goToPreviewActivity() {

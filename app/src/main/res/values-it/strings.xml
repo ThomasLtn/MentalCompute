@@ -2,7 +2,7 @@
 <resources>
     <!-- Main Activity -->
     <string name="play">Giocare</string>
-    <!-- <string name="score_view"></string> -->
+    <!-- <string name="score_view">Guarda i punteggi</string> -->
 
     <!-- Mental Activity -->
     <string name="correct">Corretto</string>
@@ -12,11 +12,11 @@
 
     <!-- Score Activity-->
     <string name="operations_count_label">Numero di operazioni : XX</string>
-    <string name="accuracy_label"> : XX %</string>
+    <string name="accuracy_label">Accuratezza : XX %</string>
     <string name="last_operation_label">Ultimo operazione : XX</string>
     <string name="retry">Prova di nuovo</string>
 
     <!-- Score view menu -->
-    <string name="score_view">Prova di nuovo</string>
-    <string name="reset">Resettare il punteggi</string>
+    <string name="score_view">Guarda i punteggi</string>
+    <string name="reset">Resettare i punteggi</string>
 </resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main Activity -->
+    <string name="play">" Играть в"</string>
+    <!-- <string name="score_view">Посмотреть результаты</string> -->
+
+    <!-- Mental Activity -->
+    <string name="correct">Правильный</string>
+    <string name="incorrect">Неправильный</string>
+    <string name="answer">Ответ</string>
+    <string name="validate">Проверить</string>
+
+    <!-- Score Activity-->
+    <string name="operations_count_label">Число операций : XX</string>
+    <string name="accuracy_label">Точность : XX %</string>
+    <string name="last_operation_label">Последняя операция : XX</string>
+    <string name="retry">Повторить</string>
+
+    <!-- Score view menu -->
+    <string name="score_view">Посмотреть результаты</string>
+    <string name="reset">Сброс баллов</string>
+</resources>
