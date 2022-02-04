@@ -15,6 +15,7 @@
     <string name="accuracy_label">Точность : XX %</string>
     <string name="last_operation_label">Последняя операция : XX</string>
     <string name="retry">Повторить</string>
+    <string name="previous">Предыдущий</string>
 
     <!-- Score view menu -->
     <string name="score_view">Посмотреть результаты</string>

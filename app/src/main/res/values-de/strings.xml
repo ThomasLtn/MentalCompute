@@ -15,6 +15,7 @@
     <string name="accuracy_label">Precisión : XX %</string>
     <string name="last_operation_label">Letztes Operation : XX</string>
     <string name="retry">Erneut versuchen</string>
+    <string name="previous">Vorangegangenen</string>
 
     <!-- Score view menu -->
     <string name="score_view">Spielstände anschauen</string>

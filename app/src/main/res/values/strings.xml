@@ -15,7 +15,8 @@
     <string name="operations_count_label">Operations count : XX</string>
     <string name="accuracy_label">Accuracy : XX %</string>
     <string name="last_operation_label">Last operation : XX</string>
-    <string name="retry">Retry</string>
+    <string name="retry">Retry</string> <!-- Keep the key for later -->
+    <string name="previous">Previous</string>
 
     <!-- Score view menu -->
     <string name="score_view">View scores</string>

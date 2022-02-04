@@ -15,6 +15,7 @@
     <string name="accuracy_label">Precisão : XX %</string>
     <string name="last_operation_label">Última operação : XX</string>
     <string name="retry">Repetir</string>
+    <string name="previous">Anterior</string>
 
     <!-- Score view menu -->
     <string name="score_view">Ver pontuações</string>

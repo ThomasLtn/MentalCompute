@@ -38,7 +38,6 @@ public class MentalActivity extends AppCompatActivity {
         switch (id) {
             case R.id.score_view_menu_button:
                 Intent intent = new Intent(this, ScoreActivity.class);
-                finish();
                 startActivity(intent);
                 break;
         }
