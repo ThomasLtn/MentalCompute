@@ -1,9 +1,11 @@
-package fr.tlottin.mentalcompute;
+package fr.tlottin.mentalcompute.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
+
+import fr.tlottin.mentalcompute.R;
 
 public class ScoreActivity extends AppCompatActivity {
 

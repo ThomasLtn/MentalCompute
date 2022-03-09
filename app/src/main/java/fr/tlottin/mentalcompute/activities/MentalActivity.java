@@ -1,4 +1,4 @@
-package fr.tlottin.mentalcompute;
+package fr.tlottin.mentalcompute.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import fr.tlottin.mentalcompute.R;
 
 public class MentalActivity extends AppCompatActivity {
 
