@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -15,6 +16,9 @@ import android.widget.TextView;
 import fr.tlottin.mentalcompute.R;
 
 public class MentalActivity extends AppCompatActivity {
+    //TODO: Call to services
+    //TODO: Display if the answer is incorrect or if there is no answer
+    //TODO: Display if the answer is correct
 
     public enum Operation {
         PLUS("+"),
@@ -32,9 +36,9 @@ public class MentalActivity extends AppCompatActivity {
     }
 
     private TextView operationText;
-    private int number1;
-    private int number2;
-    private Operation typeOperation;
+    private int _number1;
+    private int _number2;
+    private Operation _typeOperation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,26 +79,57 @@ public class MentalActivity extends AppCompatActivity {
     }
 
     private void numbersAndOperationGenerator() {
-        number1 = (int) (11*Math.random());
-        number2 = (int) (11*Math.random());
+        int n1 = (int) (11*Math.random());
+        int n2 = (int) (11*Math.random());
+        setNumber1(n1);
+        setNumber2(n2);
 
+        Operation typeOp;
         switch ((int) (3*Math.random())) {
             case 0:
-                typeOperation = Operation.PLUS;
+                typeOp = Operation.PLUS;
+                setTypeOperation(typeOp);
                 break;
             case 1:
-                typeOperation = Operation.MINUS;
+                typeOp = Operation.MINUS;
+                setTypeOperation(typeOp);
                 break;
             case 2:
-                typeOperation = Operation.BY;
+                typeOp = Operation.BY;
+                setTypeOperation(typeOp);
                 break;
         }
 
-        displayOperation(number1, number2, typeOperation);
+        displayOperation(_number1, _number2, _typeOperation);
     }
 
     private void displayOperation(int n1, int n2, Operation typeOp) {
+        //TODO: Display the operation by a configurable resource
         String compute = n1 + " " + typeOp.getOperator() + " " + n2;
         operationText.setText(compute);
+    }
+
+    private int getNumber1() {
+        return _number1;
+    }
+
+    private void setNumber1(int number1) {
+        this._number1 = number1;
+    }
+
+    private int getNumber2() {
+        return _number2;
+    }
+
+    private void setNumber2(int number2) {
+        this._number2 = number2;
+    }
+
+    private Operation getTypeOperation() {
+        return _typeOperation;
+    }
+
+    private void setTypeOperation(Operation typeOperation) {
+        this._typeOperation = typeOperation;
     }
 }
