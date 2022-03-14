@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -33,14 +32,14 @@ public class MentalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mental);
 
-        operationText = findViewById(R.id.operation);
-        ImageButton home_imagebutton = findViewById(R.id.home_imageButton);
-        EditText editText = (EditText) findViewById(R.id.AnswerZone);
+        operationText = findViewById(R.id.operation_text);
+        ImageButton home_image_button = findViewById(R.id.home_image_button);
+        EditText editText = findViewById(R.id.answer_zone);
 
         OperationsGeneratorService calculator = new OperationsGeneratorService();
         OperationModel operationG = calculator.CallFunctions();
 
-        home_imagebutton.setOnClickListener(view -> goToPreviewActivity());
+        home_image_button.setOnClickListener(view -> goToPreviewActivity());
         editText.requestFocus();
 
         setNumber1(operationG.getNumber1());
