@@ -14,26 +14,12 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import fr.tlottin.mentalcompute.R;
+import fr.tlottin.mentalcompute.models.Operation;
 
 public class MentalActivity extends AppCompatActivity {
     //TODO: Call to services
     //TODO: Display if the answer is incorrect or if there is no answer
     //TODO: Display if the answer is correct
-
-    public enum Operation {
-        PLUS("+"),
-        MINUS("-"),
-        BY("*");
-
-        final String type;
-        Operation(String operator) {
-            this.type = operator;
-        }
-
-        String getOperator(){
-            return type;
-        }
-    }
 
     private TextView operationText;
     private int _number1;
