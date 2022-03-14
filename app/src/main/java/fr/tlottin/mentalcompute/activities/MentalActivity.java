@@ -15,9 +15,11 @@ import android.widget.TextView;
 
 import fr.tlottin.mentalcompute.R;
 import fr.tlottin.mentalcompute.models.Operation;
+import fr.tlottin.mentalcompute.models.OperationModel;
+import fr.tlottin.mentalcompute.services.OperationsGeneratorService;
 
 public class MentalActivity extends AppCompatActivity {
-    //TODO: Call to services
+    //TODO: Call to Resolution service
     //TODO: Display if the answer is incorrect or if there is no answer
     //TODO: Display if the answer is correct
 
@@ -35,10 +37,16 @@ public class MentalActivity extends AppCompatActivity {
         ImageButton home_imagebutton = findViewById(R.id.home_imageButton);
         EditText editText = (EditText) findViewById(R.id.AnswerZone);
 
+        OperationsGeneratorService calculator = new OperationsGeneratorService();
+        OperationModel operationG = calculator.CallFunctions();
+
         home_imagebutton.setOnClickListener(view -> goToPreviewActivity());
         editText.requestFocus();
 
-        numbersAndOperationGenerator();
+        setNumber1(operationG.getNumber1());
+        setNumber2(operationG.getNumber2());
+        setTypeOperation(operationG.getOperator());
+        displayOperation();
     }
 
     @Override
@@ -64,34 +72,8 @@ public class MentalActivity extends AppCompatActivity {
         finish();
     }
 
-    private void numbersAndOperationGenerator() {
-        int n1 = (int) (11*Math.random());
-        int n2 = (int) (11*Math.random());
-        setNumber1(n1);
-        setNumber2(n2);
-
-        Operation typeOp;
-        switch ((int) (3*Math.random())) {
-            case 0:
-                typeOp = Operation.PLUS;
-                setTypeOperation(typeOp);
-                break;
-            case 1:
-                typeOp = Operation.MINUS;
-                setTypeOperation(typeOp);
-                break;
-            case 2:
-                typeOp = Operation.BY;
-                setTypeOperation(typeOp);
-                break;
-        }
-
-        displayOperation(_number1, _number2, _typeOperation);
-    }
-
-    private void displayOperation(int n1, int n2, Operation typeOp) {
-        //TODO: Display the operation by a configurable resource
-        String compute = n1 + " " + typeOp.getOperator() + " " + n2;
+    private void displayOperation() {
+        String compute = getString(R.string.operation_template, getNumber1(), getTypeOperation().getOperator(), getNumber2());
         operationText.setText(compute);
     }
 
