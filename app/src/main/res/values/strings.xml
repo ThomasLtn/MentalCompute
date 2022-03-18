@@ -16,7 +16,7 @@
     <!-- Score Activity-->
     <string name="operations_count_label">Operations count : XX</string>
     <string name="accuracy_label">Accuracy : XX %</string>
-    <string name="last_operation_label">Last operation : XX</string>
+    <string name="last_operation_label">Last operation : %1$d %2$operator %3$d = %4$d</string>
     <string name="retry">Retry</string> <!-- Keep the key for later -->
     <string name="previous">Previous</string>
 

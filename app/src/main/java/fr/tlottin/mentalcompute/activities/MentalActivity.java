@@ -28,6 +28,7 @@ public class MentalActivity extends AppCompatActivity {
     private int _number1;
     private int _number2;
     private Operator _typeOperation;
+    private int _answer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +67,11 @@ public class MentalActivity extends AppCompatActivity {
         switch (id) {
             case R.id.score_view_menu_button:
                 Intent intent = new Intent(this, ScoreActivity.class);
+                intent.putExtra(ScoreActivity.NUMBER1_KEY, this.getNumber1());
+                intent.putExtra(ScoreActivity.NUMBER2_KEY, this.getNumber2());
+                intent.putExtra(ScoreActivity.TYPE_OPERATOR_KEY, this.getTypeOperator());
+                intent.putExtra(ScoreActivity.ANSWER_KEY, this.getAnswer());
+
                 startActivity(intent);
                 break;
         }
@@ -82,9 +88,12 @@ public class MentalActivity extends AppCompatActivity {
     }
     
     private void setAttributes(OperationModel opModel){
+        ResolutionService rS = new ResolutionService();
+
         setNumber1(opModel.getNumber1());
         setNumber2(opModel.getNumber2());
         setTypeOperator(opModel.getTypeOperator());
+        setAnswer(rS.compute(opModel));
         displayOperation();
     }
 
@@ -130,5 +139,13 @@ public class MentalActivity extends AppCompatActivity {
 
     private void setTypeOperator(Operator typeOperation) {
         this._typeOperation = typeOperation;
+    }
+
+    private int getAnswer() {
+        return _answer;
+    }
+
+    private void setAnswer(int result) {
+        this._answer = result;
     }
 }

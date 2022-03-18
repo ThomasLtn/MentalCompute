@@ -46,10 +46,7 @@ public class OperationsGeneratorService {
             if (n2 == 0)
                 n2++;
 
-            int result = n1; //(n1*n2)/n2 = n1
             n1 *= n2; //Guarantee a rest of 0
-
-            return new OperationModel(n1, n2, operator, result);
         }
 
         return new OperationModel(n1, n2, operator);

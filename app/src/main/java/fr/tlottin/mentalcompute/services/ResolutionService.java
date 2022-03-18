@@ -30,12 +30,12 @@ public class ResolutionService {
                 result = number1 * number2;
                 break;
             case DIVIDE:
-                result = operation.getResult();
+                result = number1 / number2;
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + operator);
         }
-        
+
         return result;
     }
 

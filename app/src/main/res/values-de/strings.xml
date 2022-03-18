@@ -14,7 +14,7 @@
     <!-- Score Activity-->
     <string name="operations_count_label">Zahl der Operation : XX</string>
     <string name="accuracy_label">Precisión : XX %</string>
-    <string name="last_operation_label">Letztes Operation : XX</string>
+    <string name="last_operation_label">Letztes Operation : %1$d %2$operator %3$d = %4$d</string>
     <string name="retry">Erneut versuchen</string>
     <string name="previous">Vorangegangenen</string>
 

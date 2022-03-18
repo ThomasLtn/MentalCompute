@@ -14,7 +14,7 @@
     <!-- Score Activity-->
     <string name="operations_count_label">Число операций : XX</string>
     <string name="accuracy_label">Точность : XX %</string>
-    <string name="last_operation_label">Последняя операция : XX</string>
+    <string name="last_operation_label">Последняя операция : %1$d %2$operator %3$d = %4$d</string>
     <string name="retry">Повторить</string>
     <string name="previous">Предыдущий</string>
 
