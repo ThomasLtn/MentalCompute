@@ -4,17 +4,17 @@ public class OperationModel {
 
     private final int number1;
     private final int number2;
-    private final Operation typeOperation;
+    private final Operator typeOperation;
     private final int result;
 
-    public OperationModel(int n1, int n2, Operation tO) {
+    public OperationModel(int n1, int n2, Operator tO) {
         this.number1 = n1;
         this.number2 = n2;
         this.typeOperation = tO;
         this.result = 0;
     }
 
-    public OperationModel(int n1, int n2, Operation tO, int result) {
+    public OperationModel(int n1, int n2, Operator tO, int result) {
         this.number1 = n1;
         this.number2 = n2;
         this.typeOperation = tO;
@@ -29,7 +29,7 @@ public class OperationModel {
         return number2;
     }
 
-    public Operation getTypeOperation() {
+    public Operator getTypeOperator() {
         return typeOperation;
     }
 

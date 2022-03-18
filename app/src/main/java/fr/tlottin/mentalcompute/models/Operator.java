@@ -1,13 +1,13 @@
 package fr.tlottin.mentalcompute.models;
 
-public enum Operation {
+public enum Operator {
     PLUS("+"),
     MINUS("-"),
     BY("*"),
     DIVIDE("/");
 
     final String type;
-    Operation(String operator) {
+    Operator(String operator) {
         this.type = operator;
     }
 

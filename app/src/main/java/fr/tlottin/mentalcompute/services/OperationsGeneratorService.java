@@ -1,6 +1,6 @@
 package fr.tlottin.mentalcompute.services;
 
-import fr.tlottin.mentalcompute.models.Operation;
+import fr.tlottin.mentalcompute.models.Operator;
 import fr.tlottin.mentalcompute.models.OperationModel;
 
 public class OperationsGeneratorService {
@@ -9,20 +9,20 @@ public class OperationsGeneratorService {
         return (int) (11*Math.random());
     }
 
-    private Operation OperationGenerator() {
-        Operation typeOp;
+    private Operator OperationGenerator() {
+        Operator typeOp;
         switch ((int) (4*Math.random())) {
             case 0:
-                typeOp = Operation.PLUS;
+                typeOp = Operator.PLUS;
                 break;
             case 1:
-                typeOp = Operation.MINUS;
+                typeOp = Operator.MINUS;
                 break;
             case 2:
-                typeOp = Operation.BY;
+                typeOp = Operator.BY;
                 break;
             case 3:
-                typeOp = Operation.DIVIDE;
+                typeOp = Operator.DIVIDE;
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + (int) (3 * Math.random()));
@@ -34,9 +34,9 @@ public class OperationsGeneratorService {
     public OperationModel CallFunctions() {
         int n1 = numbersGenerator();
         int n2 = numbersGenerator();
-        Operation operator = OperationGenerator();
+        Operator operator = OperationGenerator();
 
-        if (operator == Operation.DIVIDE){
+        if (operator == Operator.DIVIDE){
             if (n1 < n2) {
                 int temp = n1;
                 n1 = n2;

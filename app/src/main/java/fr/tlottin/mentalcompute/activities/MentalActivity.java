@@ -15,7 +15,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import fr.tlottin.mentalcompute.R;
-import fr.tlottin.mentalcompute.models.Operation;
+import fr.tlottin.mentalcompute.models.Operator;
 import fr.tlottin.mentalcompute.models.OperationModel;
 import fr.tlottin.mentalcompute.models.exception.NoAnswerException;
 import fr.tlottin.mentalcompute.models.exception.WrongAnswerException;
@@ -27,7 +27,7 @@ public class MentalActivity extends AppCompatActivity {
     private TextView operationText;
     private int _number1;
     private int _number2;
-    private Operation _typeOperation;
+    private Operator _typeOperation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,14 +77,14 @@ public class MentalActivity extends AppCompatActivity {
     }
 
     private void displayOperation() {
-        String compute = getString(R.string.operation_template, getNumber1(), getTypeOperation().getOperator(), getNumber2());
+        String compute = getString(R.string.operation_template, getNumber1(), getTypeOperator().getOperator(), getNumber2());
         operationText.setText(compute);
     }
     
     private void setAttributes(OperationModel opModel){
         setNumber1(opModel.getNumber1());
         setNumber2(opModel.getNumber2());
-        setTypeOperation(opModel.getTypeOperation());
+        setTypeOperator(opModel.getTypeOperator());
         displayOperation();
     }
 
@@ -124,11 +124,11 @@ public class MentalActivity extends AppCompatActivity {
         this._number2 = number2;
     }
 
-    private Operation getTypeOperation() {
+    private Operator getTypeOperator() {
         return _typeOperation;
     }
 
-    private void setTypeOperation(Operation typeOperation) {
+    private void setTypeOperator(Operator typeOperation) {
         this._typeOperation = typeOperation;
     }
 }

@@ -2,7 +2,7 @@ package fr.tlottin.mentalcompute.services;
 
 import androidx.annotation.NonNull;
 
-import fr.tlottin.mentalcompute.models.Operation;
+import fr.tlottin.mentalcompute.models.Operator;
 import fr.tlottin.mentalcompute.models.OperationModel;
 import fr.tlottin.mentalcompute.models.exception.NoAnswerException;
 import fr.tlottin.mentalcompute.models.exception.WrongAnswerException;
@@ -16,7 +16,7 @@ public class ResolutionService {
 
         int number1 = operation.getNumber1();
         int number2 = operation.getNumber2();
-        Operation operator = operation.getTypeOperation();
+        Operator operator = operation.getTypeOperator();
 
         int result;
         switch (operator) {
