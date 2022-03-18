@@ -12,5 +12,6 @@
 
 1. Manage the 4 elementary types of operator ( + ; - ; * ; / ).
 2. Display if the user has the correct/wrong answer or if he skips.
-3. Can stop the game.
-4. Multilanguage
+3. Generate a new operation each time the validate button is pressed.
+4. Can stop the game.
+5. Multilanguage
