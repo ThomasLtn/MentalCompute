@@ -20,7 +20,7 @@ public class OperationModel {
         return number2;
     }
 
-    public Operation getOperator() {
+    public Operation getTypeOperation() {
         return typeOperation;
     }
 }

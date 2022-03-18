@@ -44,7 +44,7 @@ public class MentalActivity extends AppCompatActivity {
 
         setNumber1(operationG.getNumber1());
         setNumber2(operationG.getNumber2());
-        setTypeOperation(operationG.getOperator());
+        setTypeOperation(operationG.getTypeOperation());
         displayOperation();
     }
 
