@@ -72,6 +72,7 @@ public class MentalActivity extends AppCompatActivity {
                 intent.putExtra(ScoreActivity.TYPE_OPERATOR_KEY, this.getTypeOperator());
                 intent.putExtra(ScoreActivity.ANSWER_KEY, this.getAnswer());
 
+                finish();
                 startActivity(intent);
                 break;
         }
