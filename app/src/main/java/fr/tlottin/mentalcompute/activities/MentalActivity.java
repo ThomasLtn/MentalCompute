@@ -1,5 +1,7 @@
 package fr.tlottin.mentalcompute.activities;
 
+import static java.lang.Thread.sleep;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -35,6 +37,12 @@ public class MentalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mental);
 
+        try {
+            sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         operationText = findViewById(R.id.operation_text);
         ImageButton home_image_button = findViewById(R.id.home_image_button);
         EditText editText = findViewById(R.id.answer_zone);
@@ -49,7 +57,7 @@ public class MentalActivity extends AppCompatActivity {
 
         home_image_button.setOnClickListener(view -> goToPreviousActivity());
         editText.requestFocus();
-        validButton.setOnClickListener(view -> Answer(editText.getText().toString(), operationG, correctTV, incorrectTV, skipTV, answerTV));
+        validButton.setOnClickListener(view -> Answer(editText, home_image_button, validButton, editText.getText().toString(), operationG, correctTV, incorrectTV, skipTV, answerTV));
 
         setAttributes(operationG);
     }
@@ -98,12 +106,19 @@ public class MentalActivity extends AppCompatActivity {
         displayOperation();
     }
 
-    private void Answer(String answerZone, OperationModel opModel, TextView cTV, TextView iTV, TextView sTV, TextView aTV) {
+    private void Answer(EditText answerZone, ImageButton iB, Button b, String proposedAnswer, OperationModel opModel, TextView cTV, TextView iTV, TextView sTV, TextView aTV) {
+        Intent intent = new Intent(this, MentalActivity.class);
+        startActivity(intent);
+
+        answerZone.setVisibility(View.GONE);
+        iB.setVisibility(View.GONE);
+        b.setVisibility(View.GONE);
+
         ResolutionService answer = new ResolutionService();
         int result = answer.compute(opModel);
 
         try {
-            answer.CorrectAnswer(answerZone, opModel);
+            answer.CorrectAnswer(proposedAnswer, opModel);
             cTV.setVisibility(View.VISIBLE);
         } catch (NoAnswerException e) {
             String text = getString(R.string.answer, result);
@@ -116,6 +131,8 @@ public class MentalActivity extends AppCompatActivity {
             aTV.setVisibility(View.VISIBLE);
             iTV.setVisibility(View.VISIBLE);
         }
+
+        finish();
     }
 
     private int getNumber1() {
