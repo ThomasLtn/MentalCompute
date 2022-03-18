@@ -15,10 +15,10 @@ public class ScoreActivity extends AppCompatActivity {
         setContentView(R.layout.activity_score);
 
         Button previous_button = findViewById(R.id.previous_button);
-        previous_button.setOnClickListener(view -> goToPreviewActivity());
+        previous_button.setOnClickListener(view -> goToPreviousActivity());
     }
 
-    private void goToPreviewActivity() {
+    private void goToPreviousActivity() {
         finish();
     }
 }

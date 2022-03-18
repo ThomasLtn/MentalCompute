@@ -46,7 +46,7 @@ public class MentalActivity extends AppCompatActivity {
         OperationsGeneratorService calculator = new OperationsGeneratorService();
         OperationModel operationG = calculator.CallFunctions();
 
-        home_image_button.setOnClickListener(view -> goToPreviewActivity());
+        home_image_button.setOnClickListener(view -> goToPreviousActivity());
         editText.requestFocus();
         validButton.setOnClickListener(view -> Answer(editText.getText().toString(), operationG, correctTV, incorrectTV, skipTV, answerTV));
 
@@ -72,7 +72,7 @@ public class MentalActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void goToPreviewActivity() {
+    private void goToPreviousActivity() {
         finish();
     }
 

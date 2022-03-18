@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         Button score_view_button = findViewById(R.id.score_view_button);
 
         play_button.setOnClickListener(view -> openComputeActivity());
-        score_view_button.setOnClickListener(view -> openPreviewActivity());
+        score_view_button.setOnClickListener(view -> openPreviousActivity());
     }
 
     private void openComputeActivity(){
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void openPreviewActivity() {
+    private void openPreviousActivity() {
         Intent intent = new Intent(this, ScoreActivity.class);
         startActivity(intent);
     }
