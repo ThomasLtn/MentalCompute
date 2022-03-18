@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -15,12 +17,12 @@ import android.widget.TextView;
 import fr.tlottin.mentalcompute.R;
 import fr.tlottin.mentalcompute.models.Operation;
 import fr.tlottin.mentalcompute.models.OperationModel;
+import fr.tlottin.mentalcompute.models.exception.NoAnswerException;
+import fr.tlottin.mentalcompute.models.exception.WrongAnswerException;
 import fr.tlottin.mentalcompute.services.OperationsGeneratorService;
+import fr.tlottin.mentalcompute.services.ResolutionService;
 
 public class MentalActivity extends AppCompatActivity {
-    //TODO: Call to Resolution service
-    //TODO: Display if the answer is incorrect or if there is no answer
-    //TODO: Display if the answer is correct
 
     private TextView operationText;
     private int _number1;
@@ -35,17 +37,20 @@ public class MentalActivity extends AppCompatActivity {
         operationText = findViewById(R.id.operation_text);
         ImageButton home_image_button = findViewById(R.id.home_image_button);
         EditText editText = findViewById(R.id.answer_zone);
+        TextView correctTV = findViewById(R.id.correct_text);
+        TextView incorrectTV = findViewById(R.id.incorrect_text);
+        TextView skipTV = findViewById(R.id.skip_text);
+        TextView answerTV = findViewById(R.id.answer_text);
+        Button validButton =  findViewById(R.id.valid_button);
 
         OperationsGeneratorService calculator = new OperationsGeneratorService();
         OperationModel operationG = calculator.CallFunctions();
 
         home_image_button.setOnClickListener(view -> goToPreviewActivity());
         editText.requestFocus();
+        validButton.setOnClickListener(view -> Answer(editText.getText().toString(), operationG, correctTV, incorrectTV, skipTV, answerTV));
 
-        setNumber1(operationG.getNumber1());
-        setNumber2(operationG.getNumber2());
-        setTypeOperation(operationG.getTypeOperation());
-        displayOperation();
+        setAttributes(operationG);
     }
 
     @Override
@@ -74,6 +79,33 @@ public class MentalActivity extends AppCompatActivity {
     private void displayOperation() {
         String compute = getString(R.string.operation_template, getNumber1(), getTypeOperation().getOperator(), getNumber2());
         operationText.setText(compute);
+    }
+    
+    private void setAttributes(OperationModel opModel){
+        setNumber1(opModel.getNumber1());
+        setNumber2(opModel.getNumber2());
+        setTypeOperation(opModel.getTypeOperation());
+        displayOperation();
+    }
+
+    private void Answer(String answerZone, OperationModel opModel, TextView cTV, TextView iTV, TextView sTV, TextView aTV) {
+        ResolutionService answer = new ResolutionService();
+        int result = answer.compute(opModel);
+
+        try {
+            answer.CorrectAnswer(answerZone, opModel);
+            cTV.setVisibility(View.VISIBLE);
+        } catch (NoAnswerException e) {
+            String text = getString(R.string.answer, result);
+            aTV.setText(text);
+            aTV.setVisibility(View.VISIBLE);
+            sTV.setVisibility(View.VISIBLE);
+        } catch (WrongAnswerException e) {
+            String text = getString(R.string.answer, result);
+            aTV.setText(text);
+            aTV.setVisibility(View.VISIBLE);
+            iTV.setVisibility(View.VISIBLE);
+        }
     }
 
     private int getNumber1() {

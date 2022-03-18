@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Main Activity -->
-    <string name="play">" Играть в"</string>
+    <string name="play">Играть в</string>
     <!-- <string name="score_view">Посмотреть результаты</string> -->
 
     <!-- Mental Activity -->
     <string name="correct">Правильный</string>
     <string name="incorrect">Неправильный</string>
-    <string name="answer">Ответ</string>
+    <string name="skip">Операция пропущена</string>
+    <string name="answer">Ответ : %1$d</string>
     <string name="validate">Проверить</string>
 
     <!-- Score Activity-->

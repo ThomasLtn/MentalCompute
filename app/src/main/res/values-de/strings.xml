@@ -7,7 +7,8 @@
     <!-- Mental Activity -->
     <string name="correct">Korrekt</string>
     <string name="incorrect">Inkorrekt</string>
-    <string name="answer">Antwort</string>
+    <string name="skip">Operation übersprungen</string>
+    <string name="answer">Antwort : %1$d</string>
     <string name="validate">Bestätigen</string>
 
     <!-- Score Activity-->
