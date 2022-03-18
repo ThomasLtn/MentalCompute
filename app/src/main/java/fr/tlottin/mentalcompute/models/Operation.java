@@ -3,7 +3,8 @@ package fr.tlottin.mentalcompute.models;
 public enum Operation {
     PLUS("+"),
     MINUS("-"),
-    BY("*");
+    BY("*"),
+    DIVIDE("/");
 
     final String type;
     Operation(String operator) {

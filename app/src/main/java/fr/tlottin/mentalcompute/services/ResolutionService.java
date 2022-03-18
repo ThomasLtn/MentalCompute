@@ -29,6 +29,9 @@ public class ResolutionService {
             case BY:
                 result = number1 * number2;
                 break;
+            case DIVIDE:
+                result = operation.getResult();
+                break;
             default:
                 throw new IllegalStateException("Unexpected value: " + operator);
         }
